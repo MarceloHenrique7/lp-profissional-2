@@ -1,0 +1,6 @@
+<svg width="220" height="56" viewBox="0 0 220 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="10" width="36" height="36" rx="10" fill="#2563eb"></rect>
+  <path d="M18 34V22M26 34V22M18 28H26" stroke="#fff" stroke-width="2.3" stroke-linecap="round"></path>
+  <text x="52" y="38" fill="#1e293b" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">Henrique</text>
+  <text x="52" y="53" fill="#2563eb" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="500">Tech Studio</text>
+</svg>

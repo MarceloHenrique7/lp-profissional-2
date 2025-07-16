@@ -1,0 +1,7 @@
+<svg width="180" height="48" viewBox="0 0 180 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="8" width="32" height="32" rx="8" fill="#2563EB"></rect>
+  <rect x="12" y="18" width="12" height="12" rx="3" fill="white"></rect>
+  <rect x="38" y="14" width="3" height="20" rx="1.5" fill="#2563EB"></rect>
+  <text x="48" y="34" fill="#1E293B" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="bold" letter-spacing="1">Henrique</text>
+  <text x="48" y="45" fill="#2563EB" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold">Tech Studio</text>
+</svg>
