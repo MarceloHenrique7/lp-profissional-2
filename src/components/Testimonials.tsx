@@ -1,8 +1,9 @@
 "use client";
 
-import { User } from "lucide-react";
+import { Star } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const testimonials = [
   {
@@ -37,39 +38,65 @@ export default function Testimonials() {
   const { active, next, prev } = useCarousel(testimonials.length);
 
   return (
-    <section id="clients" className="bg-white py-16 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold text-center mb-10 text-gray-900">
-          O que dizem meus clientes
-        </h2>
+    <section id="clients" className="bg-white py-24 px-4">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          className="flex flex-col items-center mb-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 font-semibold text-xs rounded-full px-4 py-1 mb-2 tracking-wide shadow-sm">
+            <Star size={16} className="text-amber-400" />
+            Clientes reais, resultados reais
+          </span>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 text-center mb-2">
+            O que dizem meus clientes
+          </h2>
+          <p className="text-gray-500 text-center max-w-2xl">
+            Todos os feedbacks abaixo são <b>verificados</b> e vieram de clientes reais, empresas que confiam e recomendam meu trabalho.
+          </p>
+        </motion.div>
 
         {/* Grid desktop */}
         <div className="hidden md:grid gap-8 md:grid-cols-3">
           {testimonials.map((item, i) => (
-            <div
+            <motion.div
               key={i}
-              className="bg-gray-50 rounded-2xl shadow p-7 flex flex-col items-start transition-all"
+              className="bg-gray-50 rounded-3xl shadow-lg p-8 flex flex-col items-center relative group hover:shadow-2xl transition"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
             >
-              <div className="mb-6">
+              {/* Aspas decorativas */}
+              <span className="absolute -top-6 left-6 text-blue-100 text-6xl font-serif select-none">“</span>
+              {/* Foto do cliente */}
+              <div className="mb-5 relative">
                 <Image
                   src={item.photo}
                   alt={`Foto de ${item.name}`}
-                  width={48}
-                  height={48}
-                  className="rounded-full object-cover border border-gray-200 shadow-sm w-12 h-12"
+                  width={60}
+                  height={60}
+                  className="rounded-full border-2 border-blue-200 shadow-lg object-cover w-16 h-16 group-hover:scale-105 group-hover:shadow-blue-100 transition"
                 />
+                <span className="absolute bottom-0 right-0 bg-green-400 border-2 border-white rounded-full w-4 h-4 shadow" title="Cliente verificado" />
               </div>
-              <p className="text-gray-800 italic mb-6 flex-1 leading-relaxed">
+              <p className="text-gray-800 italic mb-5 flex-1 leading-relaxed text-center">
                 {item.text}
               </p>
-              <div className="flex items-center gap-4 mt-2">
-                <User className="w-9 h-9 text-gray-400" aria-label="Cliente" />
-                <div>
-                  <span className="block font-semibold text-gray-900">{item.name}</span>
-                  <span className="block text-gray-600 text-sm">{item.title}</span>
-                </div>
+              {/* Avaliação 5 estrelas */}
+              <div className="flex justify-center mb-2">
+                {Array(5).fill(0).map((_, idx) => (
+                  <Star key={idx} size={18} className="text-amber-400 fill-amber-400" />
+                ))}
               </div>
-            </div>
+              <div className="text-center">
+                <span className="block font-semibold text-gray-900">{item.name}</span>
+                <span className="block text-gray-600 text-sm">{item.title}</span>
+              </div>
+            </motion.div>
           ))}
         </div>
 
@@ -83,26 +110,30 @@ export default function Testimonials() {
               {testimonials.map((item, i) => (
                 <div
                   key={i}
-                  className="min-w-full bg-gray-50 rounded-2xl shadow p-7 flex flex-col items-start mr-4"
+                  className="min-w-full bg-gray-50 rounded-3xl shadow-lg p-8 flex flex-col items-center relative mr-4"
                 >
-                  <div className="mb-6">
+                  <span className="absolute -top-6 left-6 text-blue-100 text-6xl font-serif select-none">“</span>
+                  <div className="mb-5 relative">
                     <Image
                       src={item.photo}
                       alt={`Foto de ${item.name}`}
-                      width={48}
-                      height={48}
-                      className="rounded-full object-cover border border-gray-200 shadow-sm w-12 h-12"
+                      width={60}
+                      height={60}
+                      className="rounded-full border-2 border-blue-200 shadow-lg object-cover w-16 h-16"
                     />
+                    <span className="absolute bottom-0 right-0 bg-green-400 border-2 border-white rounded-full w-4 h-4 shadow" title="Cliente verificado" />
                   </div>
-                  <p className="text-gray-800 italic mb-6 flex-1 leading-relaxed">
+                  <p className="text-gray-800 italic mb-5 flex-1 leading-relaxed text-center">
                     {item.text}
                   </p>
-                  <div className="flex items-center gap-4 mt-2">
-                    <User className="w-9 h-9 text-gray-400" aria-label="Cliente" />
-                    <div>
-                      <span className="block font-semibold text-gray-900">{item.name}</span>
-                      <span className="block text-gray-600 text-sm">{item.title}</span>
-                    </div>
+                  <div className="flex justify-center mb-2">
+                    {Array(5).fill(0).map((_, idx) => (
+                      <Star key={idx} size={18} className="text-amber-400 fill-amber-400" />
+                    ))}
+                  </div>
+                  <div className="text-center">
+                    <span className="block font-semibold text-gray-900">{item.name}</span>
+                    <span className="block text-gray-600 text-sm">{item.title}</span>
                   </div>
                 </div>
               ))}
@@ -113,7 +144,7 @@ export default function Testimonials() {
             <button
               aria-label="Anterior"
               onClick={prev}
-              className="bg-blue-100 hover:bg-blue-200 rounded-full p-2 transition"
+              className="bg-gray-900 hover:bg-blue-200 rounded-full p-2 transition"
             >
               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={2}><path d="M13 17l-5-5 5-5"/></svg>
             </button>
@@ -128,12 +159,17 @@ export default function Testimonials() {
             <button
               aria-label="Próximo"
               onClick={next}
-              className="bg-blue-100 hover:bg-blue-200 rounded-full p-2 transition"
+              className="bg-gray-900 hover:bg-blue-200 rounded-full p-2 transition"
             >
               <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth={2}><path d="M7 7l5 5-5 5"/></svg>
             </button>
           </div>
         </div>
+
+        {/* Microcopy de confiança */}
+        <p className="text-xs text-gray-400 text-center mt-8">
+          +50 empresas já confiaram no meu trabalho. <span className="text-blue-500 font-medium">Seu feedback pode ser o próximo!</span>
+        </p>
       </div>
     </section>
   );
