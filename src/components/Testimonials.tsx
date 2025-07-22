@@ -8,25 +8,24 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     text: `"O Henrique entendeu exatamente o que nossa clínica precisava. O site ficou lindo, rápido e já aumentou nossos agendamentos online em menos de um mês!"`,
-    name: "Dra. Camila Rodrigues",
-    title: "Dentista, Odonto Vida",
+    name: "Dr. Ricardo Silva",
+    title: "Dentista Especialista",
     photo: "/person-1.jpg",
   },
   {
     text: `"Sempre tive dificuldade para gerenciar pedidos no delivery. Depois do sistema desenvolvido pelo Henrique, tudo ficou mais prático e profissional. Recomendo muito!"`,
     name: "Lucas Souza",
-    title: "Proprietário, Hamburgueria Gourmet",
+    title: "Proprietário de Restaurante",
     photo: "/person-2.jpg",
   },
   {
     text: `"Atendimento rápido, direto e transparente. Desde o orçamento até a entrega, fui acompanhando cada etapa. Meu sistema de gestão está impecável e seguro!"`,
     name: "Mariana Lopes",
-    title: "Gestora, Fit Company",
+    title: "Gestora, Academia",
     photo: "/person-3.jpg",
   },
 ];
 
-// Carousel logic (mobile)
 function useCarousel(total: number) {
   const [active, setActive] = useState(0);
   const next = () => setActive(a => (a + 1) % total);
