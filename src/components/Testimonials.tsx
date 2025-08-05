@@ -35,7 +35,6 @@ function useCarousel(total: number) {
 
 export default function Testimonials() {
   const { active, next, prev } = useCarousel(testimonials.length);
-  const [imgSrc, setImgSrc] = useState(testimonials[active].photo);
 
   return (
     <section id="clients" className="bg-white py-24 px-4">
@@ -79,7 +78,6 @@ export default function Testimonials() {
                   alt={`Foto de ${item.name}`}
                   width={60}
                   height={60}
-                  onError={() => setImgSrc("/user.svg")}
                   className="rounded-full border-2 border-blue-200 shadow-lg object-cover w-16 h-16 group-hover:scale-105 group-hover:shadow-blue-100 transition"
                 />
                 <span className="absolute bottom-0 right-0 bg-green-400 border-2 border-white rounded-full w-4 h-4 shadow" title="Cliente verificado" />
