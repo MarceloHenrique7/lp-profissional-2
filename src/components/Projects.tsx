@@ -46,7 +46,7 @@ const projects = [
     },
   },
   {
-    src: "/projeto-3.jpg",
+    src: "/projeto-3-2.jpg",
     title: "Academia Online",
     desc: "Gestão de alunos e pagamentos para academias.",
     tag: "Academia",
@@ -60,12 +60,13 @@ const projects = [
         "Dashboard financeiro"
       ],
       images: [
+        "/projeto-3-2.jpg",
         "/projeto-3.jpg",
       ],
     },
   },
   {
-    src: "/projeto-4.jpg",
+    src: "/projeto-4-2.jpg",
     title: "Bots WhatsApp",
     desc: "Automação de atendimento e vendas 24h.",
     tag: "Automação",
@@ -79,12 +80,13 @@ const projects = [
         "Escalável e seguro"
       ],
       images: [
+        "/projeto-4-2.jpg",
         "/projeto-4.jpg"
       ],
     },
   },
   {
-    src: "/projeto-5.jpg",
+    src: "/projeto-5-2.jpg",
     title: "Conferência de Notas",
     desc: "Gestão eficiente de produtos e notas fiscais.",
     tag: "ERP",
@@ -98,6 +100,7 @@ const projects = [
         "Alertas de inconsistência"
       ],
       images: [
+        "/projeto-5-2.jpg",
         "/projeto-5.jpg"
       ],
     },
@@ -177,7 +180,7 @@ export default function ProjectsGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <span className="text-blue-600">Projetos</span> em Destaque
+          <span className="text-blue-600">Projetos</span> Recentes
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-9">
           {projects.map((project, i) => (

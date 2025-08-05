@@ -65,14 +65,14 @@ export default function Contacts() {
             <Mail className="w-8 h-8 text-blue-600 group-hover:scale-110 transition" />
             <div>
               <span className="block text-xs text-gray-500 font-medium">E-mail</span>
-              <span className="block text-base font-bold text-blue-700 break-all">marcelohenriquex77@gmail.com</span>
-              <span className="block text-xs text-gray-400 mt-1">Respondo em até 1 dia útil</span>
+              <span className="block text-base font-bold text-blue-700 break-all">henriquetechstudio@gmail.com</span>
+              <span className="block text-xs text-gray-400 mt-1">Respondo em até 24 horas úteis</span>
             </div>
           </a>
           <a
             href="https://linkedin.com/in/henrique-oliveira-71a2bb275/"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" 
             className="flex-1 group bg-white border border-blue-100 rounded-2xl shadow-xl p-6 flex items-center gap-4 hover:scale-105 hover:shadow-2xl transition-all duration-200 relative"
           >
             <Linkedin className="w-8 h-8 text-blue-600 group-hover:scale-110 transition" />
